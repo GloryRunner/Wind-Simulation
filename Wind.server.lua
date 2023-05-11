@@ -8,7 +8,7 @@ local x_offset = 1
 local period_length = 2 * math.pi / stretch_factor
 local step_count = 60
 
-function getY(x)
+function get_y(x)
 	return amplitude * math.sin(stretch_factor * x) + vertical_constant
 end
 
@@ -37,10 +37,10 @@ local function create_wave(z_pos)
 			for i = 1, #beams do
 				local beam = beams[i]
 				if i == 1 then
-					beam.Position = Vector3.new(beam.Position.X + x_offset, getY(beam.Position.X + x_offset), z_pos)
+					beam.Position = Vector3.new(beam.Position.X + x_offset, get_y(beam.Position.X + x_offset), z_pos)
 				else
 					local previous_beam = beams[i - 1]
-					beam.Position = Vector3.new(previous_beam.Position.X + 0.25, getY(previous_beam.Position.X + 1), z_pos)
+					beam.Position = Vector3.new(previous_beam.Position.X + 0.25, get_y(previous_beam.Position.X + 1), z_pos)
 				end
 			end
 		end
