@@ -12,7 +12,7 @@ function getY(x)
 	return amplitude * math.sin(stretch_factor * x) + vertical_constant
 end
 
-local function create_beams(z_pos)
+local function create_wave(z_pos)
 	local beam_offset = period_length / step_count - 1
 	local beams = {}
 	for i = 1, step_count / 2 do
@@ -55,5 +55,5 @@ local beam_count = 30
 -- ratio of beams to z offset is 10 to 3
 for i = 1, beam_count do
 	current += (beam_count / 10) * 3
-	create_beams(current)
+	create_wave(current)
 end
