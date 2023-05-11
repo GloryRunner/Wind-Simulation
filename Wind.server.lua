@@ -46,14 +46,3 @@ local function create_wave(z_pos)
 		end
 	end)
 end
-
-
-
-
-local current = start_pos.Z
-local beam_count = 30
--- ratio of beams to z offset is 10 to 3
-for i = 1, beam_count do
-	current += (beam_count / 10) * 3
-	create_wave(current)
-end
